@@ -4,5 +4,5 @@
  */
 
 function sleep (seconds) {
-
+    wait(seconds * 1000);
 }

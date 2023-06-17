@@ -17,6 +17,47 @@
   - `npm run test-calculator`
 */
 
-class Calculator {}
+class Calculator {
+    
+  constructor() {
+    this.result = 0;
+  }
+
+  add(num) {
+    this.result += num;
+  }
+
+  subtract(num) {
+    this.result -= num;
+  }
+
+  multiply(num) {
+    this.result *= num;
+  }
+
+  divide(num) {
+    if(num != 0) {
+      this.result /= num;
+    }
+    else 
+      throw new Error('Invalid dividend ' + n);    
+  }
+
+  getResult() {
+    return this.result;
+  }
+
+  clear() {
+    this.result = 0;
+  }
+
+  calculate(expression) {
+    // tokenize the string
+    // foreach token
+    // if the token is a number, push it to a stack
+    // if the 
+  }
+
+}
 
 module.exports = Calculator;

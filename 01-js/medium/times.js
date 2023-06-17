@@ -7,6 +7,23 @@ Try running it for
 Hint - use Date class exposed in JS
 */
 
-function calculateTime(n) {
-    return 0.01;
+function range(size) {
+    return [...Array(size).keys()].map(i => i + 1);
 }
+
+function sumNumbers(max) {
+    let sum = 0;    
+    range(max).forEach((elem) => { sum += elem; });
+    return sum;
+}
+
+function calculateTime(n) {    
+    const t0 = performance.now();
+    sumNumbers(100);
+    const t1 = performance.now();
+    console.log(`sum from 1-${n} took ${t1 - t0} milliseconds.`);
+}
+
+calculateTime(100);
+calculateTime(100000);
+calculateTime(1000000000);

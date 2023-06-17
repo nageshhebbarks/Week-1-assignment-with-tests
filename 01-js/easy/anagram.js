@@ -8,6 +8,13 @@
 */
 
 function isAnagram(str1, str2) {
+  if(str1.lenghth != str2.lenghth)
+    return false;
+  
+  str1Sorted = str1.toLowerCase().split("").sort().join("");
+  str2Sorted = str2.toLowerCase().split("").sort().join("");
+
+  return str1Sorted === str2Sorted ? true : false;
 
 }
 

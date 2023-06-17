@@ -8,8 +8,24 @@
   - `npm run test-expenditure-analysis`
 */
 
+let spendings = {};
+let output = [];
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+
+  transactions.forEach(element => {
+    if(element.category in spendings) {
+      spendings[element.category] += element.price;
+    }
+    else {
+      spendings[element.category] = element.price;
+    }
+  });
+  
+  for(var key in spendings) {
+      output.push({"category": key, "totalSpent": spendings[key]});
+    }
+
+  return output;
 }
 
 module.exports = calculateTotalSpentByCategory;
